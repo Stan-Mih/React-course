@@ -2,10 +2,8 @@
 
 class Hello extends React.Component {
 	render() {
-		return (
-			<div>
-				<h1>Hello there!</h1>				
-			</div>
+		return (			
+			<h1>Hello there!</h1>			
 		);
 	}
 }
@@ -14,8 +12,9 @@ class Hello extends React.Component {
 
 // function Hello(){
 // 	return(
-// 		<div>
-// 			<h1>Hello there!</h1>				
+// 		<div>							// must return only one element, so wrap thing in a "div"
+// 			<h1>Hello there!</h1>	
+//			<h1>Hello there!</h1>	
 // 		</div>
 // 	);
 // }
