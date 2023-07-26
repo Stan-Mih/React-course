@@ -2,7 +2,7 @@
 function WhatDogDoes(){            
 	return( 					
 		<div>							
-			<h1 center >Good boy will: {actions()}</h1>	
+			<h1>Good boy will: {actions()}</h1>	
 			<img src="GoodBoy.jpg"/> 		
 		</div>
 	);
