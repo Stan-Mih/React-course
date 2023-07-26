@@ -8,7 +8,7 @@ function WhatDogDoes(){
 	);
 
 function actions(){
-    const thingsDogDo = ["bark","eat", "poop", "vomit","retrieve"," chase"]
+    const thingsDogDo = ["bark","eat", "poop", "vomit","retrieve"]
     const action = thingsDogDo[Math.floor(Math.random()*thingsDogDo.length)];
     return action;
 }
