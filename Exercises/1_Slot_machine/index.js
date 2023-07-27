@@ -1,14 +1,12 @@
 class App extends React.Component {
-	render() {
-        const style = {
-            fontSize: 60,
-            fontWeight: "bold"
-        }
+	render() {       		
 		return (
 			<div>
-			<p style = {style} >Slot Machines!</p>
-			</div>	
-            
+			<h1>Try your luck!</h1>
+			<Machine />
+			<Machine />
+			<Machine />
+			</div>	            
 		);
 	}
 }
