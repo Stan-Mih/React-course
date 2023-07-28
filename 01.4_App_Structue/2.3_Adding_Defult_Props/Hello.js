@@ -1,5 +1,5 @@
 class Hello extends React.Component {
-    static defaultProps = {
+    static defaultProps = {   // added defult values
         giftPoints : 1 ,
         from : "Stranger"
     }
