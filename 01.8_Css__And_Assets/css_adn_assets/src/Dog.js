@@ -6,7 +6,7 @@ class Dog extends Component {
         return(
             <div className = "Dog">                
                 <h1>DOG!</h1>
-                <img className = "Dog-picture" src = {pitbull}/>
+                <img className = "Dog-picture" alt="none" src = {pitbull}/>
                 <div>ANOTER DIV, BUT NOT IN DOG COMPONENT</div>               
             </div>
         )
