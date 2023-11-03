@@ -14,10 +14,11 @@ class Pokegame extends Component{
         ]
     }
     render() {   
-        let hand1 = [];
+        let pokeL = [...this.props.pokemon].length
+        let hand1 = [...this.props.pokemon];
         let hand2 = [];
 
-        for(let i =1; i <=this.props.pokemon.length; i++){
+        for(let i = 1; i <= pokeL; i++){
             const set = this.props.pokemon.splice(Math.floor(Math.random()*this.props.pokemon.length));
                 if(i %2 ===0){
                     hand1.push(set);
@@ -25,8 +26,8 @@ class Pokegame extends Component{
                     hand2.push(set);
                 }
         }
-            //console.log(hand1);
-            console.log(hand2);
+            console.log(hand1);
+           // console.log(pokeL);
         return(
             <h1>Pokegame!</h1>
         )
