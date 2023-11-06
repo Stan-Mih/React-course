@@ -4,7 +4,6 @@ class App extends React.Component {
             <div>
                 <Hello from="Cheff" to="the Children"/>
                 <Hello from="Santa" to="the deers"/>
-
             </div>
         )       
     }
