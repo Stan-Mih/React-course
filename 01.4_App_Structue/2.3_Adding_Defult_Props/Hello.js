@@ -1,10 +1,10 @@
 class Hello extends React.Component {
-    static defaultProps = {   // added defult values
+    static defaultProps = {   // Added defult values for props. "defaultProps" is particular name that should be followed
         giftPoints : 1 ,
         from : "Stranger"
     }
     render() {              //props are immutable / read only  
-        console.log(this.props);
+      
         let gifts = this.props.giftPoints; 
         let giftsToGive = "*".repeat(gifts)  
         return (    

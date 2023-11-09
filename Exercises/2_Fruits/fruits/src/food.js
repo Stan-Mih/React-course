@@ -1,2 +1,5 @@
-const fruits = ["apple", "pear", "tomato", "appricot","ananas"];
+const fruits = [
+    "🍇", "🍈", "🍉", "🍊", "🍋", "🍌", "🍍", "🍎",
+    "🍏", "🍐", "🍒", "🍓", "🥝", "🍅", "🥑",
+  ];
 export default fruits;

@@ -2,8 +2,7 @@ class App extends React.Component {
     render() {
         return(
             <div>
-                <Hello 
-                
+                <Hello                 
                 to = "the Children"
                 giftPoints = {5}                
                 kidIsGood = {true}

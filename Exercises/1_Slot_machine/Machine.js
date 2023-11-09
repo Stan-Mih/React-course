@@ -2,7 +2,7 @@ class Machine extends React.Component {
     render(){
     const fruits = ["src/grapes.jpeg", "src/orange.jpg", "src/cherry.jpg"];     
     const arrOfFruit = []; 
-    const imgStyle ={
+    const imgStyle = {
         width: 50, 
         height: 50 
     } 
@@ -31,4 +31,3 @@ class Machine extends React.Component {
         }
     }     
 }
-

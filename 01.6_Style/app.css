@@ -2,7 +2,7 @@
     border: 4px solid black;
     background: lightseagreen;
 }
-/* just to show convention of naming, both classes no used in the code*/
+/* just to show convention of naming (kebab-case), both classes, are not used in the code*/
 .Machine-win {
     background: yellowgreen;
 }

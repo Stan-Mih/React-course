@@ -1,13 +1,19 @@
 class Friend extends React.Component {
     render() {
+        const { name, hobbies } = this.props;   // object destructuring
         return(
             <div>
-                <p>{this.props.name}</p>                
+                <p>{name}</p>                
                 <ul>                    
-                    {(this.props.hobbies.map(el => <li>{el}</li>))}                   
+                    {(hobbies.map(el => <li>{el}</li>))}                   
                 </ul>
             </div>
         );
     }
 }
 
+
+    
+      
+  
+    
