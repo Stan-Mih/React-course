@@ -8,9 +8,9 @@ class Clicker extends Component{
    }
    click(e) {
     let rand = Math.floor(Math.random()*10) + 1;    // get random number
-    this.setState ({num : rand})       // update state with new num
-           
-}
+    this.setState ({num : rand})       // update state with new num           
+    }
+
     render() {  
         const num = this.state.num;     
         return(
