@@ -1,11 +1,10 @@
-import Lottery from './Lottery';
 import './App.css';
+import CoinContainer from "./CoinContainer"
 
 function App() {
   return (
     <div className="App">
-     <Lottery />
-     <Lottery title="Mini daily" maxNum = {10} maxBalls = {4}/>
+      <CoinContainer />      
     </div>
   );
 }

@@ -1,18 +1,37 @@
-import React, {Component} from "react";
-import Ball from"./Ball";
+import React, { Component } from "react";
+import Ball from "./Ball";
 import "./Lottery.css"
 
-class Lottery extends Component{
-    render(){
+class Lottery extends Component {
+    static defaultProps = {
+        title: "Lotto",
+        maxBalls: 6,
+        maxNum: 40,
+    }
+    constructor(props) {
+        super(props);
+        this.state = { nums: Array.from({ length: this.props.maxBalls }) };
+        this.handleClick = this.handleClick.bind(this);
+    }
+    generate() {
+        this.setState(curState => ({
+            nums: curState.nums.map(n => Math.floor(Math.random() * this.props.maxNum) + 1)
+        }))
+
+    }
+    handleClick() {
+        this.generate()
+    }
+    render() {
         return (
-            <div className="Lotto">   
-                <Ball num = {17}/>
-                <Ball num = {5}/>
-                <Ball num = {9}/>
-                <Ball num = {11}/>
-                <Ball num = {18}/>
+            <div className="Lottery">
+                <h1>{this.props.title}</h1>
+                <div>
+                    {this.state.nums.map(n => <Ball num={n} />)}
+                </div>
+                <button onClick={this.handleClick}>Generate!</button>
             </div>
-        ) 
+        )
     }
 }
 
