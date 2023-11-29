@@ -30,9 +30,9 @@ class Cell extends Component {
     let classes = "Cell" + (this.props.isLit ? " Cell-lit" : "");
 
     return (
-      <div>
+    
         <td className={classes} onClick={this.handleClick} />        
-        </div>
+      
     )
 
       
