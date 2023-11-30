@@ -5,16 +5,16 @@ import './Board.css';
 
 /** Game board of Lights out.
  *
- * !Properties:
+ * Properties:
  *
- * !- nrows: number of rows of board
- * !- ncols: number of cols of board
- * !- chanceLightStartsOn: float, chance any cell is lit at start of game
+ * - nrows: number of rows of board
+ * - ncols: number of cols of board
+ * - chanceLightStartsOn: float, chance any cell is lit at start of game
  *
  * State:
  *
- * !- hasWon: boolean, true when board is all off
- * !- board: array-of-arrays of true/false
+ * - hasWon: boolean, true when board is all off
+ * - board: array-of-arrays of true/false
  *
  *    For this board:
  *       .  .  .
@@ -36,6 +36,7 @@ class Board extends Component {
     chanceLightStartsOn: 0.25,
   };
 
+  // TODO: set initial state
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +44,7 @@ class Board extends Component {
       board: this.createBoard(),
     };
 
-    // TODO: set initial state
+   
   }
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
@@ -57,18 +58,16 @@ class Board extends Component {
         row.push(Math.random() < this.props.chanceLightStartsOn)
       }
       board.push(row);
-    }   
+    }
     return board
   }
 
   /** handle changing a cell: update board & determine if winner */
 
   flipCellsAround(coord) {
-    console.log("flipping", coord);
     let { ncols, nrows } = this.props;
     let board = this.state.board;
     let [y, x] = coord.split("-").map(Number);
-
 
     function flipCell(y, x) {
       // if this coord is actually on board, flip it
@@ -77,13 +76,25 @@ class Board extends Component {
         board[y][x] = !board[y][x];
       }
     }
+     // TODO: flip this cell and the cells around it
+    flipCell(y, x);
+    flipCell(y, x - 1);
+    flipCell(y, x + 1);
+    flipCell(y - 1, x);
+    flipCell(y + 1, x);
 
-    // TODO: flip this cell and the cells around it
+   
 
     // win when every cell is turned off
     // TODO: determine is the game has been won
+    
+    let hasWon = board.every(row => row.every(cell => !cell));
 
-    //this.setState({board, hasWon});
+    console.log(board);
+    console.log(hasWon);
+    
+
+    this.setState({ board: board, hasWon: hasWon });
   }
 
 
@@ -95,11 +106,11 @@ class Board extends Component {
       let row = [];
       for (let y = 0; y < this.props.nrows; y++) {
         let coord = `${i}-${y}`
-        row.push(<Cell key={coord}isLit={this.state.board[i][y]} flipCellsAroundMe={() => this.flipCellsAround(coord)}/>);
+        row.push(<Cell key={coord} isLit={this.state.board[i][y]} flipCellsAroundMe={() => this.flipCellsAround(coord)} />); // how  ??????
       }
-      tblBoard.push(<tr key={i}>{row}</tr>)      
+      tblBoard.push(<tr key={i}>{row}</tr>)
     }
-    
+
     return (
       <table className="Board">
         <tbody>{tblBoard}</tbody>
